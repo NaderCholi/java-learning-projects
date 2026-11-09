@@ -13,12 +13,12 @@ Repositório dedicado aos meus estudos em Java, reunindo exercícios, projetos p
 
 | Projeto | Descrição |
 |---|---|
-| Conta Bancária | Exercício de POO com criação de contas, depósitos, saques e consulta de saldo. |
+| [Conta Bancária](Exercicio1) | Exercício de POO com criação de contas, depósitos, saques e consulta de saldo. |
+| [Exercício 02](Exercicio02) | Exercício de Fundamentos de Programação com cálculo do grau G1, verificação de aprovação por média e frequência e cálculo da média final com a G2. |
+| [Sistema de Gerenciamento de Eventos](Sistema_Eventos) | Projeto de POO com cadastro de clientes e eventos, venda e cancelamento de ingressos, meia-entrada para estudantes e relatórios de vendas. |
 
 ## Objetivo
 
 Consolidar os fundamentos de Java, aprimorar minha lógica de programação e desenvolver projetos progressivamente mais complexos.
 
----
-
-*Repositório em constante evolução, atualizado conforme avanço nos estudos.*
+Repositório em constante evolução, atualizado conforme avanço nos estudos.
