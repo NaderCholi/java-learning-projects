@@ -2,9 +2,10 @@
 
 Projeto em Java, executado pelo terminal, para cadastrar clientes e eventos, vender e cancelar ingressos e consultar relatórios simples de vendas.
 
-Desenvolvi este trabalho ao longo de alguns dias, como continuação de um exercício anterior da disciplina de Programação Orientada a Objetos, em que eu havia feito um sistema de venda de ingressos com apenas uma classe de evento. Aqui o problema foi ampliado: passaram a existir clientes, vários eventos, regras de venda mais completas e um menu para usar tudo isso.
+A ideia deste projeto foi proposta por uma IA (Claude, da Anthropic), como um desafio para praticar o que venho aprendendo em Java, e foi desenvolvida ao longo de alguns dias. O desafio envolve clientes, vários eventos, regras de venda e um menu para usar tudo isso. Ao longo do desenvolvimento, usei a IA para tirar dúvidas, revisar meu código e montar algumas partes, como o menu e a classe `Sistema`.
 
 **Autor:** Nader Iad Choli
+**Contexto:** projeto de estudo, a partir de um desafio proposto por IA
 
 ## Funcionalidades
 
@@ -37,7 +38,9 @@ Desenvolvi este trabalho ao longo de alguns dias, como continuação de um exerc
 
 Procurei colocar cada regra na classe que já possui as informações necessárias para decidi-la. Por exemplo, quem sabe se ainda há vagas é o próprio `Evento`, pois é ele que conhece a capacidade e a quantidade vendida. A `Principal` apenas lê o que o usuário digita e chama os métodos.
 
-O diagrama de classes está em `architecture/diagramaClasse.png`.
+O diagrama de classes está em `architecture/DiagramaClasse.png`.
+
+![Diagrama de classes](architecture/DiagramaClasse.png)
 
 Os dados são guardados em vetores (arrays) e não em listas. Por isso, o `Evento` e o `Sistema` controlam por conta própria quantas posições já estão ocupadas.
 
@@ -89,7 +92,7 @@ Estes foram os cenários que usei para conferir se as regras funcionavam. Em tod
 
 O ponto que mais exigiu atenção foi o cancelamento. Como os ingressos ficam em um vetor, remover um deles deixa um espaço vazio no meio. Foi preciso deslocar os ingressos seguintes uma posição para trás e diminuir a quantidade vendida uma única vez. No começo, eu diminuía esse contador duas vezes, o que fazia o evento perder uma vaga a mais.
 
-O cancelamento também trouxe outro problema. Eu gerava o id do ingresso a partir da quantidade vendida, e depois de um cancelamento dois ingressos poderiam receber o mesmo id. Resolvi criando um contador de ids no `Evento`, que só aumenta.
+O cancelamento também trouxe outro problema. Se o id do ingresso fosse calculado a partir da quantidade vendida, depois de um cancelamento dois ingressos poderiam receber o mesmo id. Resolvi criando um contador de ids no `Evento`, que só aumenta.
 
 Também precisei entender melhor o uso do `this` ao criar o ingresso dentro do `Evento`, e a ordem de criação do vetor no construtor: ele só pode ser criado depois de a capacidade ser definida, senão nasce com tamanho zero.
 
